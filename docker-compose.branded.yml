@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  lightrag:
+    container_name: lightrag-backend
+    image: ghcr.io/hkuds/lightrag:latest
+    env_file:
+      - .env
+    volumes:
+      - ./data/rag_storage:/app/data/rag_storage
+      - ./data/inputs:/app/data/inputs
+      - ./.env:/app/.env
+    networks:
+      - lightrag-net
+    expose:
+      - "9621"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  nginx-branding:
+    image: nginx:alpine
+    container_name: bosch-graph2rag
+    ports:
+      - "${EXTERNAL_PORT:-9621}:80"
+    volumes:
+      - ./nginx-branding.conf:/etc/nginx/nginx.conf:ro
+      - ./assets/bosch.png:/usr/share/nginx/html/logo.png:ro
+      - ./assets/bosch.png:/usr/share/nginx/html/favicon.png:ro
+    depends_on:
+      - lightrag
+    networks:
+      - lightrag-net
+
+networks:
+  lightrag-net:
+    driver: bridge
