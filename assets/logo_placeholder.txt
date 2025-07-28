@@ -1,0 +1,3 @@
+Please add your Bosch logo here as logo.png
+The file should be optimized for web (< 500KB)
+Recommended: PNG format, 512x512 pixels
