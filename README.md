@@ -43,16 +43,13 @@ docker-compose up -d
 
 ## 💻 Non-Docker Installation
 
-### Automatic Installation
-```bash
-./install_local.sh
-```
-
 ### Manual Installation
 ```bash
-# Create virtual environment
-python3.10 -m venv venv
-source venv/bin/activate
+# Create conda environment
+conda create --name graph2rag python=3.11 -y
+
+# Activate conda environment
+conda activate graph2rag
 
 # Install dependencies
 pip install -e ".[api]"

@@ -1,95 +1,22 @@
-# Python-related files
-__pycache__/
-*.py[cod]
-*.egg-info/
-.eggs/
-*.tgz
-*.tar.gz
-*.ini
-
-# Virtual Environment
-.venv/
-env/
-venv/
-
-# Environment files (keep .env.sample files)
+# Environments
 .env
-.env.*
-!.env.sample
-!.env.*.sample
-.env_example
-azure_embedding.env
-
-# Build / Distribution
-dist/
-build/
-site/
-
-# Logs / Reports
-*.log
-*.log.*
-*.logfire
-*.coverage/
-log/
-
-# Caches
-.cache/
-.mypy_cache/
-.pytest_cache/
-.ruff_cache/
-.gradio/
-.history/
-temp/
-
-# IDE / Editor Files
+.venv
+venv/
+/venv/
+# IDEs
 .idea/
 .vscode/
-.vscode/settings.json
 
-# Framework-specific files
-local_neo4jWorkDir/
-neo4jWorkDir/
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
 
-# Data & Storage
-inputs/
+# Large files
 rag_storage/
-rag_storage_*/
-examples/input/
-examples/output/
-output*/
-*.pdf
-*.docx
-*.pptx
-bosch_test.txt
-test.txt
-
-# Miscellaneous
-.DS_Store
-TODO.md
-ignore_this.txt
-*.ignore.*
-
-# Project-specific files
-dickens*/
-book.txt
-LightRAG.pdf
-download_models_hf.py
-lightrag-dev/
-gui/
-
-# unit-test files
-test_*
-
-# Temporary and backup files
-*.tmp
-*.bak
-server_output.log
-QUICK_START.txt
-
-# Installation scripts (keep for reference)
-!install_local.sh
-!start_local_server.sh
-!bosch_server.py
-
-# Cline files
-memory-bank/
+inputs/
+lightrag.log
